@@ -1,0 +1,20 @@
+---
+import PageWrapper from "./pageWrapper.astro";
+
+const {frontmatter} = Astro.props;
+---
+<style>
+    .img-container{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<PageWrapper pageTitle={frontmatter.title}>
+    <h1>{frontmatter.title}</h1>
+    <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+    <p>Written by {frontmatter.author}</p>
+    <div class="img-container">
+        <img width="300" src={frontmatter.image.url} alt={frontmatter.image.alt}>
+    </div>
+    <slot />
+</PageWrapper>

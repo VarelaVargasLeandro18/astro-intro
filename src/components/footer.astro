@@ -4,7 +4,11 @@ import SocialMedia from "./socialMedia.astro";
 const platform = "github";
 const username = "VarelaVargasLeandro18";
 ---
-
+<style>
+  footer {
+    border-top: 1px solid black;
+  }
+</style>
 <footer>
   <p>Learn more about my projects on <SocialMedia platform={platform} username={username} />!</p>
 </footer>
