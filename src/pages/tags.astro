@@ -1,0 +1,17 @@
+---
+import type { MarkdownInstance } from "astro";
+import PageWrapper from "../layouts/pageWrapper.astro";
+
+const pageTitle = "Tags";
+const posts : MarkdownInstance<Record<string, any>>[] = await Astro.glob("./posts/*.md");
+const tags = new Set<String>(posts.flatMap( post => post.frontmatter.tags ));
+---
+<style>
+    a {
+        text-transform: capitalize;
+    }
+</style>
+<PageWrapper pageTitle={pageTitle}>
+	<h1>{pageTitle}</h1>
+    {Array.from(tags).map( tag => <li><a href={`/tags/${tag}`}>{tag}</a></li> )}
+</PageWrapper>

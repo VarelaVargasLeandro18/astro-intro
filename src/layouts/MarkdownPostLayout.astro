@@ -2,6 +2,7 @@
 import PageWrapper from "./pageWrapper.astro";
 
 const {frontmatter} = Astro.props;
+const pageTitle = frontmatter.title.charAt(0).toUpperCase() + frontmatter.title.slice(1);
 ---
 <style>
     .img-container{
@@ -9,8 +10,8 @@ const {frontmatter} = Astro.props;
         justify-content: center;
     }
 </style>
-<PageWrapper pageTitle={frontmatter.title}>
-    <h1>{frontmatter.title}</h1>
+<PageWrapper pageTitle={pageTitle}>
+    <h1>{pageTitle}</h1>
     <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
     <p>Written by {frontmatter.author}</p>
     <div class="img-container">
