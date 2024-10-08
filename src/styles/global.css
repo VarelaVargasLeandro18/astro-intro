@@ -12,8 +12,27 @@ html.dark {
     color: #fff;
 }
 
-.dark .nav-links a {
+a {
+    text-decoration: none;
+    padding: 0.3rem;
+}
+
+.light a {
+    color: black;
+}
+
+.light a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: 0.2rem solid black;
+}
+
+.dark a {
     color: #fff;
+}
+
+.dark a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: 0.2rem solid white;
 }
 
 body {
@@ -34,4 +53,8 @@ main {
 h1 {
     margin: 1rem 0;
     font-size: 2.5rem;
+}
+
+button {
+    cursor: pointer;
 }

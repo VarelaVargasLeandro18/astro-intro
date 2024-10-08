@@ -1,6 +1,5 @@
 ---
 import Greeting from "../components/Greetings.tsx";
-import ThemeToogleButton from "../components/ThemeToogleButton.astro";
 import PageWrapper from "../layouts/pageWrapper.astro";
 
 const pageTitle = "Home";
@@ -9,5 +8,4 @@ const pageTitle = "Home";
 	<h1>{pageTitle}</h1>
 	<p>This is where I will post about my journey learning Astro.</p>
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
-	<ThemeToogleButton />
 </PageWrapper>

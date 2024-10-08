@@ -62,13 +62,15 @@
         
         return LIGHT;
     })();
+    const html = document.documentElement;
+    html.classList.toggle(theme);
     const toggleThemeButton = document.querySelector(TOGGLE_BUTTON_QUERY);
 
     toggleThemeButton.addEventListener("click", (ev) => {
-        const element = document.documentElement;
-        element.classList.toggle(DARK);
+        html.classList.toggle(DARK);
+        html.classList.toggle(LIGHT);
 
-        const isDark = element.classList.contains(DARK);
+        const isDark = html.classList.contains(DARK);
         localStorage.setItem(THEME_ITEM_NAME, isDark ? DARK : LIGHT);
     });
 </script>
